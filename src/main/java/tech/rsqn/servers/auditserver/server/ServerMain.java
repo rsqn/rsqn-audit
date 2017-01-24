@@ -1,0 +1,39 @@
+package tech.rsqn.servers.auditserver.server;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import java.util.Arrays;
+
+
+public class ServerMain {
+    static final Logger log = LoggerFactory.getLogger(ServerMain.class);
+
+    public static void main(String[] args) {
+        try {
+            ServerMain m = new ServerMain();
+            m.launch(args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String[] getApplicationContextLocations() {
+        return new String[]{"spring/startup-ctx.xml"};
+    }
+
+    public void launch(String[] args) {
+        log.info("Launching ApplicationContext " + Arrays.toString(getApplicationContextLocations()));
+
+        try {
+            GenericXmlApplicationContext ctx = new GenericXmlApplicationContext(getApplicationContextLocations());
+            log.info("Launching ApplicationContext " + Arrays.toString(getApplicationContextLocations()));
+            ctx.getBean("jetty");
+            log.info("Graceful exit");
+        } finally {
+            log.info("Exiting");
+        }
+
+    }
+}
