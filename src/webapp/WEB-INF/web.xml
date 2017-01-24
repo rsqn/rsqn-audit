@@ -24,34 +24,6 @@
     </context-param>
 
     <servlet>
-        <servlet-name>jsAggregation</servlet-name>
-        <servlet-class>tech.rsqn.utils.jjst.servlets.JavascriptAggregationServlet</servlet-class>
-        <async-supported>false</async-supported>
-        <init-param>
-            <param-name>baseProfiles</param-name>
-            <param-value>nocache,nocompile</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>jsAggregation</servlet-name>
-        <url-pattern>/js/*</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>cssAggregation</servlet-name>
-        <servlet-class>tech.rsqn.utils.jjst.servlets.CssAggregationServlet</servlet-class>
-        <async-supported>false</async-supported>
-        <init-param>
-            <param-name>baseProfiles</param-name>
-            <param-value>nocache,nocompile</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>cssAggregation</servlet-name>
-        <url-pattern>/css/*</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
