@@ -4,21 +4,13 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="tech.rsqn.servers.auditserver" />
+    <context:component-scan base-package="tech.rsqn.servers.auditserver"/>
 
-    <!--<bean id="viewResolver"-->
-          <!--class="org.springframework.web.servlet.view.UrlBasedViewResolver">-->
-        <!--<property name="viewClass"-->
-                  <!--value="org.springframework.web.servlet.view.JstlView" />-->
-        <!--<property name="prefix" value="/WEB-INF/jsp/" />-->
-        <!--<property name="suffix" value=".jsp" />-->
-    <!--</bean>-->
+    <bean id="udpConfig" class="tech.rsqn.servers.auditserver.model.AuditServerConfig">
 
-    <!--<bean id="auditService" class="tech.rsqn.servers.auditserver.services.AuditService">-->
+    </bean>
 
-    <!--</bean>-->
-
-    <bean id="store" class="tech.rsqn.streams.server.comet.store.FakeStore">
+    <bean id="udpServer" class="tech.rsqn.servers.auditserver.services.SyslogServerService">
 
     </bean>
 

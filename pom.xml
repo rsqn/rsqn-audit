@@ -9,13 +9,13 @@
     <!--</parent>-->
 
     <groupId>tech.rsqn.servers</groupId>
-    <artifactId>auditserver</artifactId>
+    <artifactId>rsqn-audit</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>streams-demo</name>
-    <description>Streams demo project streams-comet as the provider.</description>
-    <url>https://github.com/rsqn/rsqn-auditserver</url>
+    <name>rsqn-audit</name>
+    <description>Simple rsyslog audit server</description>
+    <url>https://github.com/rsqn/rsqn-audit</url>
 
     <licenses>
         <license>
@@ -46,19 +46,14 @@
             <version>1.0.5</version>
         </dependency>
         <dependency>
-            <groupId>tech.rsqn.streams</groupId>
-            <artifactId>streams-server-api</artifactId>
-            <version>1.0.2</version>
+            <groupId>tech.rsqn.useful-things</groupId>
+            <artifactId>embedded-jetty</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>tech.rsqn.streams</groupId>
-            <artifactId>streams-server-comet</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>tech.rsqn</groupId>
-            <artifactId>useful-things</artifactId>
-            <version>1.0.8</version>
+            <groupId>tech.rsqn.useful-things</groupId>
+            <artifactId>embedded-jetty</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -69,6 +64,16 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.3.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.syslog4j</groupId>
+            <artifactId>syslog4j</artifactId>
+            <version>0.9.30</version>
         </dependency>
     </dependencies>
 
