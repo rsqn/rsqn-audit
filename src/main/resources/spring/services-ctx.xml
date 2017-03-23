@@ -7,12 +7,28 @@
     <context:component-scan base-package="tech.rsqn.servers.auditserver"/>
 
     <bean id="udpConfig" class="tech.rsqn.servers.auditserver.model.AuditServerConfig">
-
+        <property name="fileName" value="/tmp/udpServer.log"/>
+        <!--<property name="host" value="0.0.0.0"/>-->
+        <property name="port" value="10514"/>
+        <property name="protocol" value="udp"/>
+        <property name="usage" value="yolo"/>
     </bean>
 
-    <bean id="udpServer" class="tech.rsqn.servers.auditserver.services.SyslogServerService">
-
+    <bean id="tcpConfig" class="tech.rsqn.servers.auditserver.model.AuditServerConfig">
+        <property name="fileName" value="/tmp/tcpServer.log"/>
+        <!--<property name="host" value="0.0.0.0"/>-->
+        <property name="port" value="10514"/>
+        <property name="protocol" value="tcp"/>
+        <property name="usage" value="yolo"/>
     </bean>
+
+    <bean id="udpServer" class="tech.rsqn.servers.auditserver.services.SyslogServerService" init-method="start">
+        <property name="config" ref="udpConfig"/>
+    </bean>
+
+    <!--<bean id="tcpServer" class="tech.rsqn.servers.auditserver.services.SyslogServerService" init-method="start">-->
+        <!--<property name="config" ref="tcpConfig"/>-->
+    <!--</bean>-->
 
 </beans>
 

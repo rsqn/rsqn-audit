@@ -18,6 +18,8 @@ public class Slf4jSysLogEventHandler implements SyslogServerEventHandlerIF {
         String level = SyslogUtility.getLevelString(event.getLevel());
 
         String s = ("{" + facility + "} " + date + " " + level + " " + event.getMessage());
+
+        System.out.println("##### " + s);
         log.info(s);
     }
 }
