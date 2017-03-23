@@ -26,9 +26,9 @@
         <property name="config" ref="udpConfig"/>
     </bean>
 
-    <!--<bean id="tcpServer" class="tech.rsqn.servers.auditserver.services.SyslogServerService" init-method="start">-->
-        <!--<property name="config" ref="tcpConfig"/>-->
-    <!--</bean>-->
+    <bean id="tcpServer" class="tech.rsqn.servers.auditserver.services.SyslogServerService" init-method="start">
+        <property name="config" ref="tcpConfig"/>
+    </bean>
 
 </beans>
 
